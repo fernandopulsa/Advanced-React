@@ -1,3 +1,3 @@
 const mutations = {};
 
-module.exports = mutations;
+module.exports = Mutations;
