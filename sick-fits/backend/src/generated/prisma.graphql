@@ -1,5 +1,5 @@
 # source: https://eu1.prisma.sh/fernando-cb8618/sick-piks-demo/dev
-# timestamp: Wed Jul 10 2019 13:44:34 GMT+0200 (Central European Summer Time)
+# timestamp: Fri Sep 20 2019 16:28:01 GMT+0200 (GMT+02:00)
 
 type AggregateUser {
   count: Int!
@@ -73,6 +73,7 @@ type User implements Node {
   name: String!
   email: String!
   coment: String!
+  birthDate: String
 }
 
 """A connection to a list of items."""
@@ -90,6 +91,7 @@ input UserCreateInput {
   name: String!
   email: String!
   coment: String!
+  birthDate: String
 }
 
 """An edge in a connection."""
@@ -110,6 +112,8 @@ enum UserOrderByInput {
   email_DESC
   coment_ASC
   coment_DESC
+  birthDate_ASC
+  birthDate_DESC
 }
 
 type UserPreviousValues {
@@ -117,6 +121,7 @@ type UserPreviousValues {
   name: String!
   email: String!
   coment: String!
+  birthDate: String
 }
 
 type UserSubscriptionPayload {
@@ -162,12 +167,14 @@ input UserUpdateInput {
   name: String
   email: String
   coment: String
+  birthDate: String
 }
 
 input UserUpdateManyMutationInput {
   name: String
   email: String
   coment: String
+  birthDate: String
 }
 
 input UserWhereInput {
@@ -339,6 +346,46 @@ input UserWhereInput {
 
   """All values not ending with the given string."""
   coment_not_ends_with: String
+  birthDate: String
+
+  """All values that are not equal to given value."""
+  birthDate_not: String
+
+  """All values that are contained in given list."""
+  birthDate_in: [String!]
+
+  """All values that are not contained in given list."""
+  birthDate_not_in: [String!]
+
+  """All values less than the given value."""
+  birthDate_lt: String
+
+  """All values less than or equal the given value."""
+  birthDate_lte: String
+
+  """All values greater than the given value."""
+  birthDate_gt: String
+
+  """All values greater than or equal the given value."""
+  birthDate_gte: String
+
+  """All values containing the given string."""
+  birthDate_contains: String
+
+  """All values not containing the given string."""
+  birthDate_not_contains: String
+
+  """All values starting with the given string."""
+  birthDate_starts_with: String
+
+  """All values not starting with the given string."""
+  birthDate_not_starts_with: String
+
+  """All values ending with the given string."""
+  birthDate_ends_with: String
+
+  """All values not ending with the given string."""
+  birthDate_not_ends_with: String
 }
 
 input UserWhereUniqueInput {

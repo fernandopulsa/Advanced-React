@@ -3,4 +3,6 @@ type User {
   name: String!
   email: String!
   coment: String!
+  birthDate: String
 }
+   
